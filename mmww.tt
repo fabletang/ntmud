@@ -1,0 +1,39 @@
+#config {TINTIN CHAR} /
+/var myname mmww 
+/nop session $myname sh.fengyun.com 6666
+/nop session $myname 117.135.143.81 6666
+/nop session $myname china.fengyun.com 6000
+/nop session $myname fy.hbisp.com 3333
+/nop session $myname fy.sysfon.com 6000
+/nop mud123.com 7000 
+/session $myname mud123.com 7000
+/ac {^#SESSION '%0' DIED.}{/read mmww.tt}
+/ac {^#SESSION '%0' ACTIVATED.}{/read mmww.tt}
+/al reload {/read mmww.tt}
+/ac {此英文名字已被使用，请输入此帐号的密码}{Sea123}
+/ac {^请敲回车键［ＲＥＴＵＲＮ］}{/cr;/ticker {noidle}{lure;}{280}}
+/ac {^重新连线完毕。}{/cr;/ticker {noidle}{lure}{280}}
+
+
+
+
+
+
+/read comm/normal.sc
+/read comm/newid.sc
+/read comm/path.sc
+/read comm/autorecover.sc
+/read comm/gag.sc
+/log a ../zen.log
+/al qq {fox;quest}
+/al eatall {drink hulu;de4 {eat mantou}}
+/al ffy {recall back;w;n;e;e;e;n;u}
+/al testf {/showme format (Test man);}
+/ac {^format (%+)}{
+/showme format result;
+/var result {%1};
+/format result1 {%l}{$result}; 
+/showme result =$result1;
+/showme tsss
+}
+/nop unac {^format (%+)}
