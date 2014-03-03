@@ -34,9 +34,8 @@
 /var npc none 
 /var fce 1000
 /var fce_m 1000
-/nop {~[1;33m¡ô¾­Ñé¡ô[2;37;0m[37m %0 [1;36m¡óÉý¼¶ËùÐè¡ó[2;37;0m[37m %1 [37m}{/var exp %0;say exp $exp}{say none}
-/nop prompt {^check status}{<039>¡ù$myname¡ù<099> ¾«: $jin1 ($jin_per%) Æø: $qi1 ($qi_per%) Éñ: $shen1 ($shen_per%)}
-/prompt {^check status}{<039>¡ù$myname¡ù<099> ¾«: $jin ($jin_per%) Æø: $qi ($qi_per%) Éñ: $shen ($shen_per%) É±Æø:$shaqi}
+/nop prompt {^check status}{<039>¡ù$myname¡ù<099> ¾«: $jin ($jin_per%) Æø: $qi ($qi_per%) Éñ: $shen ($shen_per%) É±Æø:$shaqi}
+/prompt {^check status}{<039>¡ù$myname¡ù<099> ¾«: $jin ($jin_per%) Æø: $qi ($qi_per%) É±Æø:$shaqi}
 /al fcks {/showme fight check status}
 /var cks_l 0
 /al cks_al {hp;/delay {0.2}{/showme check status}}

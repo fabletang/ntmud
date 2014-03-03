@@ -5,6 +5,12 @@
 /nop 1.光明磊落  2.狡黠多变  3.心狠手辣  4.阴险奸诈 (choose 1-4) 
 /var xingge {2}
 /var washto {washto 21 21 18 20}
+
+/var xing {道}
+/var ming {士}
+/var sex  {m}
+/var xingge {2}
+/var washto {washto 21 21 18 20}
 /ac {^请输入您的英文名字} {$myname}
 /ac {^使用%w这个名字将会创造一个新的人物}{y}
 /ac {^您的中文姓氏}{$xing}

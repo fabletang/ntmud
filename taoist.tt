@@ -1,9 +1,9 @@
 #config {TINTIN CHAR} /
-/var myname mmww 
+/var myname taoist 
 /var passwd Sea123
-/nop read comm/newid.sc
-/read comm/login.sc
-/var reconn 0
+/read comm/newid.sc
+/nop read comm/login.sc
+/var reconn 1
 /session $myname mud123.com 7000
 /format logname {../%s.log}{$myname}
 /log a {$logname}
