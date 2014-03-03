@@ -86,3 +86,5 @@
 /al qq {quest}
 /al eatall {drink hulu;de4 {eat mantou}}
 /ac {^== 未完继续}{/cr}
+/al hfall {fyz;rideto wumiao;ask nan xian about 恢复}
+/ac {^你现在真气（要求15的内力）不够，难以施展「连环决」。}{/unticker k;s;hfall;de1 {rd haigui};de3 {/ticker {k}{drop coin;k}{2}}}
