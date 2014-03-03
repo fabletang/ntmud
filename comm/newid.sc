@@ -25,3 +25,11 @@
             suicide -f}
         }
 /ac {^考虑清楚，确定的话请输入您的管理密码：}{seawolf}
+/ac {^只听野兔嚎了几声}{wield sword;kill ye tu}
+/al xuewubo {
+    /ac {^你一觉醒来}{s;s;e;xue wu bo %1 150;w;n;n;sleep};
+    /ac {^这项技能你的程度已经不输你师父了。}{stopxuewubo}
+}
+/al stopxuewubo {/unac {^你一觉醒来};
+     /unac {^这项技能你的程度已经不输你师父了。}   
+}
