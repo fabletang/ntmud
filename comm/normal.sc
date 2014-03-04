@@ -25,6 +25,7 @@
 /al de12 {/delay {12}{%1}}
 /al de13 {/delay {13}{%1}}
 /al de14 {/delay {14}{%1}}
+/al de15 {/delay {15}{%1}}
 /format ttfile {%s.tt}{$myname}
 /al reload {/read $ttfile}
 /ac {^#SESSION '%0' DIED.}{reload}

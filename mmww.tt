@@ -2,8 +2,8 @@
 /var myname mmww 
 /var passwd Sea123
 /nop read comm/newid.sc
+/var reconn 1
 /read comm/login.sc
-/var reconn 0
 /session $myname mud123.com 7000
 /format logname {../%s.log}{$myname}
 /log a {$logname}
@@ -17,3 +17,9 @@
 /read comm/gag.sc
 /read comm/status.sc
 /read comm/fight.sc
+/al hsd {wield zhufu sword;hit shen diao;/ticker {k}{drop coin;drop silver;k}{2}}
+/al stopk {/unticker {k}}
+/ac {^你现在真气（要求15的内力）不够，难以施展「连环决」。}{/unticker k;
+de2 {/system tt++ mmww.tt};
+de10 hfall;de13 {rd shendiao};de14 {hsd};
+}
