@@ -1,0 +1,87 @@
+#CLASS {kill} {enable}
+#CLASS {yb} {enable}
+#CLASS {over} {enable}
+#CLASS {gh} {enable}
+#CLASS {zd} {enable}
+#CLASS {ks} {enable}
+#CLASS {y} {enable}
+#CLASS {js} {enable}
+#CLASS {js1} {enable}
+#CLASS 0
+#ALIAS gv {give medal belt to @id;give wisdom surcoat to @id;give wisdom wrists to @id;give wisdom waist to @id;give wisdom boots to @id;give wisdom cloth to @id;give wisdom head to @id;give wisdom armor to @id}
+#ALIAS gogo {drive biao che to @temp}
+#ALIAS sb {n;#wa 2000;s;ask lin zhennan about 镖}
+#ALIAS aa {@jy-19999}
+#VAR id {} {}
+#VAR list {} {}
+#VAR temp {} {}
+#VAR shu {} {}
+#VAR map_dali {} {}
+#VAR map_hz {} {}
+#VAR map_hy {} {}
+#VAR map_xy {} {}
+#VAR npc {} {}
+#VAR map_ca {} {}
+#VAR map_fs {} {}
+#VAR zhen {} {}
+#VAR npcc {} {}
+#VAR ps {} {}
+#VAR cw {} {}
+#VAR wq {} {}
+#VAR pfm {} {}
+#VAR map_cd {} {}
+#VAR gh {} {}
+#VAR map_jz {} {}
+#VAR map_lz1 {} {}
+#VAR map_lz2 {} {}
+#VAR map_bj {} {}
+#VAR map_gw {} {}
+#VAR map_gh {} {}
+#VAR map_xj {} {}
+#VAR zd {} {}
+#VAR jy {} {}
+#VAR jy1 {} {}
+#VAR jy2 {} {}
+#TRIGGER {^  (%x)高手「(%x)」(%x)~((*)~)} {#var npcc {%4};kill @npc} "kill"
+#TRIGGER {^看起来(%x)想杀死你！} {look;npc=%1} "kill"
+#TRIGGER {^@npc突然从怀里} {look;nod @npcc} "kill"
+#TRIGGER {^林震南对你吩咐道：请在(*)内，将镖车运送到长安珠宝行。} {list=@map_ca;drive biao che to north} "yb"
+#TRIGGER {^林震南对你吩咐道：请在(*)内，将镖车运送到襄阳当铺。} {list=@map_xy;drive biao che to north} "yb"
+#TRIGGER {^林震南对你吩咐道：请在(*)内，将镖车运送到佛山英雄会馆。} {list=@map_fs;drive biao che to north} "yb"
+#TRIGGER {^林震南对你吩咐道：请在(*)内，将镖车运送到衡阳茶馆。} {list=@map_hy;drive biao che to north} "yb"
+#TRIGGER {^林震南对你吩咐道：请在(*)内，将镖车运送到杭州凤池书院。} {list=@map_hz;drive biao che to north} "yb"
+#TRIGGER {^林震南对你吩咐道：请在(*)内，将镖车运送到荆州萧湘书院。} {list=@map_jz;drive biao che to north} "yb"
+#TRIGGER {^你顿感如沫春风，神清意爽，疲惫尽去。} {#wa 1000;tuna 0} "over"
+#TRIGGER {^你不是神仙！} {e;s;s;w;w;w;s;s;ask lin zhennan about 镖} "over"
+#TRIGGER {^你现在正忙着呢！} {#wa 1000;tuna 0} "over"
+#TRIGGER {^汉水北岸} {say @gh} "gh"
+#TRIGGER {^汉水南岸} {yell boat} "gh"
+#TRIGGER {^古长城} {yell boat} "gh"
+#TRIGGER {^宣和堡} {#var shu 0;list=@map_lz2;#wa 1000;gogo} "gh"
+#TRIGGER {^林震南对你吩咐道：请在(*)内，将镖车运送到新疆杂货铺。} {list=@map_xj;drive biao che to north} "yb"
+#TRIGGER {^你说道：小土屋} {#var shu 0;list=@map_gw;#wa 1000;gogo} "gh"
+#TRIGGER {^你说道：杂货铺} {#var shu 0;list=@map_bj;gogo} "gh"
+#TRIGGER {^在此次运镖中} {#t+ over;#if @zhen=1 {#var shu 0;recall back;drop silver;w;n;w;ask nan xian about 双倍经验;ask nan xian about 状态回复} {dun gc;qq;n;n;w}} "yb"
+#TRIGGER {^林震南对你吩咐道：请在(*)内，将镖车运送到(%x)。} {zd=%2;#t- over} "zd"
+#TRIGGER {^林震南对你说道：(*)辛苦了，现在没有镖车要运，过会再来吧！} {sb} "ks"
+#TRIGGER {^林震南对你说道：你上次的镖还没送到呢，怎么又来了？} {sb} "ks"
+#TRIGGER {^请输入任意键继续或} {hi;#var zhen 1;recall back;w;s;w;w;w;s;s;#var shu2 0;#var shu 0;ask lin zhennan about 镖} "ks"
+#TRIGGER {^王者归来已经执行了} {#t- js;#ti 0;@id;@ps;y} "ks"
+#TRIGGER {^重新连线完毕。} {hi;#var zhen 1;recall back;w;s;w;w;w;s;s;#var shu 0;#var shu2 0;ask lin zhennan about 镖} "ks"
+#TRIGGER {^  (%x)高手「(%x)」(%x)~((*)~)<昏迷不醒>} {#var npcc {%4};kill @npc} "kill"
+#TRIGGER {^林震南对你吩咐道：请在(*)内，将镖车运送到大理拈花寺。} {list=@map_dali;drive biao che to north} "yb"
+#TRIGGER {^林震南对你吩咐道：请在(*)内，将镖车运送到关外(%x)。} {gh=%2;list=@map_gh;drive biao che to north} "yb"
+#TRIGGER {^林震南对你吩咐道：请在(*)内，将镖车运送到京城(%x)。} {gh=%2;list=@map_gh;drive biao che to north} "yb"
+#TRIGGER {^林震南对你吩咐道：请在(*)内，将镖车运送到成都金牛武馆。} {list=@map_cd;drive biao che to north} "yb"
+#TRIGGER {^林震南对你吩咐道：请在(*)内，将镖车运送到灵州大将军府。} {list=@map_lz1;drive biao che to north} "yb"
+#TRIGGER {^这里没有这样东西让你赶啊！} {#wa 500;#if @shu2<300 {gogo} {#con}} "y"
+#TRIGGER {^你看清楚了，这不是能驱使的车辆！} {#wa 500;#if @shu2<300 {gogo} {#con}} "y"
+#TRIGGER {^你赶着镖车往(*)驶去。} {#t- y} "y"
+#TRIGGER {^你赶着镖车驶了过来。} {#t+ y;#add shu 1;#if @shu>%numwords(@list,|) {#say 路径完毕} {temp=%word(@list,@shu,|);gogo}} "ks"
+#TRIGGER {【 经 验 】(%s)(%d)} {#math jy %2;#var jy1 @jy;#t- js} "js"
+#TRIGGER {【 经 验 】(%s)(%d)} {#math jy %2;#math jy2 @jy-@jy1;#t- js} "js1"
+#BUTTON 1 {开始运镖} {wield @wq;t- over;#var zhen 1;recall back;w;s;w;w;w;s;s;#var shu 0;ask lin zhennan about 镖} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} "" {} {} {}
+#BUTTON 2 {中断运镖} {#var zhen 0} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} "" {} {} {}
+#BUTTON 3 {人物设置} {#pr id 您的英文ID：;#pr ps 您的登录密码：;#pr cw 您的坐骑ID：;#pr pfm 你打怪的绝招：;#pr wq 装备武器：;say skills 200以上，exp要求100w，不然很容易挂掉哦。;#mess ----此机器人为eee原创，版权归eee所有。} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} "" {} {} {}
+#BUTTON 4 {记算效率} {#t+ js;hp;#ti 60} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} "" {} {} {}
+#STAT {终点是：@zd 每小时经验：@jy2}

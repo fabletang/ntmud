@@ -1,0 +1,120 @@
+#CLASS {yb} {enable}
+#CLASS {log} {enable}
+#CLASS {zzz} {disable}
+#CLASS {move} {disable}
+#CLASS {xuexi} {disable}
+#CLASS {状态} {enable}
+#CLASS 0
+#ALIAS atconnect {@id;@pwd;y}
+#ALIAS con {#con}
+#ALIAS rr {whistle @pet;ride @pet;rideto}
+#ALIAS back {1eat;rr gc;w;w;w;s;s}
+#ALIAS gg {gan che to %-1}
+#ALIAS 昆明聚朋茶馆 {path={north;north;east;east;east;south;south;south;south;south;south;south;south;west;northwest;west;southwest;west;southwest;southwest;west;south;southwest;southwest;east;east;east;east;east;south;south;east;};pathout=w}
+#ALIAS bb {#t+ yb;#t+ zzz;#t+ move;ask lin zhennan about 运镖}
+#ALIAS 成都金牛武馆 {path={north;north;east;east;east;south;south;south;south;south;south;south;south;west;northwest;west;southwest;west;southwest;southwest;west;south;west;southwest;west;west;west;north;northwest;northeast;};pathout=sw}
+#ALIAS 荆州萧湘书院 {path={north;north;east;east;east;south;south;south;south;south;south;south;south;west;southdown;south;south;south;east;south;};pathout=n}
+#ALIAS 长安珠宝行 {path={north;north;west;west;west;northwest;west;west;west;northwest;westup;west;west;west;west;west;west;west;west;west;west;west;west;west;west;westdown;west;west;west;west;west;northwest;west;west;west;north;north;north;north;west;west;west;west;west;west;west;west;north;};pathout=s}
+#ALIAS 大理拈花寺 {path={north;north;east;east;east;south;south;south;south;south;south;south;south;west;northwest;west;southwest;west;southwest;southwest;west;south;southwest;southwest;southwest;southwest;south;south;south;south;south;south;south;north;north;north;west;west;northup};pathout=sd}
+#ALIAS 佛山英雄会馆 {path={north;north;east;east;east;south;south;south;south;south;south;south;south;southwest;south;southwest;west;west;west;west;west;west;southup;southdown;south;south;west;south;};pathout=n}
+#ALIAS 关外小土屋 {path={north;north;east;east;east;north;north;north;north;north;north;north;yell boat;north;north;north;north;north;north;northeast;north;north;north;north;north;north;north;north;north;north;northeast;northwest;northeast;northeast;northeast;north;northeast;northeast;north;north;north;north;north;north;north;west;south};pathout=n}
+#ALIAS 杭州凤池书院 {path={north;north;east;east;east;east;east;east;east;east;east;southeast;south;east;south;southeast;northeast;northeast;northeast;north;northeast;east;east;northeast;east;south;south;south;east};pathout=w}
+#ALIAS 衡阳茶馆 {path={north;north;east;east;east;south;south;south;south;south;south;south;south;southwest;south;southwest;west;west;south};pathout=n}
+#ALIAS 京城杂货铺 {path={north;north;east;east;east;north;north;north;north;north;north;north;yell boat;north;north;north;north;north;north;northeast;north;north;north;north;north;north;north;north;north;north;northwest;northwest;west;west;west;west;south;south;east};pathout=w}
+#ALIAS 襄阳当铺 {path={north;north;east;east;east;south;south;south;south;south;south;south;south;west;north;north;north;north;north;north;north;west;south;};pathout=n}
+#ALIAS 新疆杂货铺 {path={north;north;east;east;east;north;north;north;west;west;west;north;north;east;northeast;north;west;north;north;west;southwest;southwest;west;northwest;southup;westdown;west;northwest;north;westup;westdown;west;northwest;northwest;west;northwest;northwest;northeast;north;north;west;};pathout=e}
+#ALIAS begin {#t+ log;rr gc}
+#ALIAS 1pfm {@pfm}
+#ALIAS 1eat {eat gan liang;drink shui dai}
+#ALIAS di {#di}
+#ALIAS ttt {touch @10LV}
+#ALIAS 1yg {yun powerup;yun shield;perform dodge.hua}
+#ALIAS ggg {give wisdom surcoat to %1;give wisdom waist to %1;give wisdom wrists to %1;give wisdom armor to %1;give wisdom head to %1;give wisdom boots to %1}
+#ALIAS gomaster {rr xingxiu;n;n;bai @_master}
+#ALIAS 1xx {xue @_master about %word(@_xxsk,%random(1,%numwords(@_xxsk,|)),|) 200}
+#ALIAS cunqian {do recall back,w,w;sunnmon qiankunl;#5 cun rune;eat gan liang;drink shui dai;cun all silver}
+#ALIAS 灵州大将军府 {path={north;north;east;east;east;north;north;north;west;west;west;north;north;east;northeast;north;west;north;north;west;southwest;southwest;west;northwest;north;northeast;north;northwest;north;northeast;northeast;northeast;northeast;yell boat;northeast;northeast;northeast;northeast;north;north;north;east;south;};pathout=n}
+#ALIAS r {rideto}
+#VAR 昆明聚朋茶馆 {} {}
+#VAR 长安珠宝行 {} {}
+#VAR 襄阳当铺 {} {}
+#VAR 荆州萧湘书院 {} {}
+#VAR 成都金牛武馆 {} {}
+#VAR 衡阳茶馆 {} {}
+#VAR 佛山英雄会馆 {} {}
+#VAR 大理拈花寺 {} {}
+#VAR 杭州凤池书院 {} {}
+#VAR 京城杂货铺 {} {}
+#VAR 关外小土屋 {} {}
+#VAR 新疆杂货铺 {} {}
+#VAR path {} {}
+#VAR dest {} {}
+#VAR pathnum {} {}
+#VAR gogo {} {}
+#VAR gnt {} {}
+#VAR pathout {} {}
+#VAR id {} {}
+#VAR idc {} {}
+#VAR pwd {} {}
+#VAR weapon {} {}
+#VAR pfm {} {}
+#VAR pet {} {}
+#VAR jobstop {} {}
+#VAR killer {} {}
+#VAR killerid {} {}
+#VAR hp_exp {} {}
+#VAR hp_qi {} {}
+#VAR hp_qi_max {} {}
+#VAR hp_qi_per {} {}
+#VAR hp_neili {} {}
+#VAR hp_pot {} {}
+#VAR hp_th {} {}
+#VAR hp_pot_lmt {} {}
+#VAR hp_th_lmt {} {}
+#VAR num {} {}
+#VAR npc_id {} {}
+#VAR shu {} {}
+#VAR _xxsk {} {}
+#VAR _master {} {}
+#TRIGGER {^【镖局传闻】@idc护送的镖车在半路让人给劫了！} {back;bb} "yb"
+#TRIGGER {^林震南对你说道：您经验已经太高了，让别人来吧！} {#t- yb;bup 100000;#wa 5000;bb} "yb"
+#TRIGGER {^林震南对你吩咐道：请在*秒内，将镖车运送到(%*)。} {path=;dest=%1;@dest;pathnum=%numwords(@path,";");#if @pathnum>0 {gogo=1;gnt=%word(@path,@gogo,";");gg @gnt}} "yb"
+#TRIGGER {^艄公说道：「到啦，上岸吧。」随即把一块踏脚板搭上堤岸。} {#add gogo 1;gnt=%word(@path,@gogo,";");#if %pos(boat,@gnt) {@@gnt} {gg @gnt}} "yb"
+#TRIGGER {^你一路马不停蹄，终于赶到了中央广场。} {#t- log;w;w;w;s;s;hp;#wa 1000;bb} "log"
+#TRIGGER {^你连线进入武林} {wear all;wield @weapon} "log"
+#TRIGGER {^设定环境变数：no_emote = ~"运镖准备~"} {yun regenerate;back;bb} "yb"
+#TRIGGER {^设定环境变数：no_emote = ~"运镖结束~"} {r gc;n;e;enter yett} "yb"
+#TRIGGER {^忽然，远远走来一群人，原来是总镖头派人前来了，为首的镖师} {#wa 2000;back;bb} "yb"
+#TRIGGER {^看起来(%*)想杀死你！} {killer=%1;id here} "zzz"
+#TRIGGER {^@killer %s~= (%*)、*、} {killerid=%1} "zzz"
+#TRIGGER {^你觉得怪对不起大家的，又开始发呆了。} {tuna 0}
+#TRIGGER {^你赶着镖车驶了过来。} {#wa 500;tuna 0} "move"
+#TRIGGER {^@killer突然从怀里掏出*，小声对你道：} {nod @killerid} "yb"
+#TRIGGER {^设定环境变数：no_emote = ~"xuexi~"} {#if (@hp_pot<10000) {#t- xuexi;#wa 2000;halt;back;bb} {halt;1xx;hp;#wa 800;set no_emote xuexi}} "xuexi"
+#TRIGGER {^然而你今天太累了，无法再进行任何学习了。} {hp;sleep} "xuexi"
+#TRIGGER {^你一觉醒来，只觉精力充沛。该活动一下了。} {1eat;hp;set no_emote xuexi} "xuexi"
+#TRIGGER {^【 ?? ?? 】*【 经 验 】%s(%d)} {hp_exp=%1} "状态"
+#TRIGGER {^【 食 物 】%s%d/%s%d%s【 潜 能 】%s(%d)} {hp_pot=%1} "状态"
+#TRIGGER {^【 气 血 】%s(%d)/%s(%d)%s~((*)~%~)%s【 内 力 】%s(%d)%s/%s(%d)%s} {hp_qi=%1;hp_qi_max=%2;hp_qi_per=%3;hp_neili=%4;#if (@hp_neili<@10000) {ttt;yun refresh}} "状态"
+#TRIGGER {^【潜能上限】%s(%d)%s【体会上限】%s(%d)} {hp_pot_lmt=%1;hp_th_lmt=%2} "状态"
+#TRIGGER {^【 饮 水 】%s%d/%s%d%s【 体 会 】%s(%d)} {hp_th=%1} "状态"
+#TRIGGER {^你不是神仙！} {#if (@hp_qi_per<90) {yun recover;yun heal;tuna 0} {#add gogo 1;gnt=%word(@path,@gogo,";");#if %pos(boat,@gnt) {@@gnt} {gg @gnt}}} "move"
+#TRIGGER {^你现在正忙着呢！} {#wa 500;tuna 0} "move"
+#TRIGGER {^战斗中吐纳，好象只有神仙才能做到。} {1pfm;#wa 500;tuna 0} "move"
+#TRIGGER {^你还是先把眼前的敌人解决了再说吧！} {#add gogo -1;#wa 500;tuna 0} "move"
+#TRIGGER {^恭喜你又成功解决一名劫匪！} {hp} "yb"
+#TRIGGER {^@killer递aa给了你*以后，吐出一口鲜血，扬长而去。} {killer=死亡} "yb"
+#TRIGGER {^你现在气血充盈，不需要疗伤。} {hp_qi_per=100} "move"
+#TRIGGER {重新连线完毕。} {#t- log;#t+ yb;#t+ zzz;#t+ move;tuna 0} "log"
+#TRIGGER {^你恭恭敬敬地向*磕头请安，叫道：「师父！」} {set no_emote xuexi} "xuexi"
+#TRIGGER {^设定环境变数：no_emote = ~"运镖aa准备~"} {yun regenerate;#if (@hp_pot>@hp_pot_lmt) {#t- yb;#t- move;#t+ xuexi;gomaster} {back;bb}} "yb"
+#TRIGGER {到了目的地，长嘶一声，猛然停下，顿时尘土四散……$中央广场} {#t- log;w;w;w;s;s;hp;#wa 1000;bb} "log"
+#TRIGGER {^在此次运镖中，你获得了} {#t- move;hp;#add num 1;#wa 4000;#case (@num) {dazuo 1} {dazuo 1} {dazuo 1} {dazuo 1} {dazuo 1} {dazuo 1} {dazuo 1} {dazuo 1} {dazuo 1} {cunqian;dazuo 1}} "yb"
+#TRIGGER {你现在正忙着呢。} {#wa 200;dazuo 1}
+#TRIGGER {你的内功还没有达到那个境界！} {#exec @pathout;#if @jobstop=1 {set no_emote 运镖结束} {set no_emote 运镖准备}} "yb"
+#BUTTON 1 {运镖开始} {begin;jobstop=0;num=0} {} {} {} {} {} {Size} {100} {20} {} {} {} {} {} {} {} "" {} {} {}
+#BUTTON 2 {暂停运镖} {jobstop=1} {} {} {} {} {} {Size} {100} {20} {} {} {} {} {} {} {} "" {} {} {}
+#BUTTON 3 {设置ID} {#prompt id {ID英文名：};#prompt idc {ID中文名：};#prompt pwd {ID密码};#prompt pet {宠物ID};#prompt weapon {武器ID}} {} {} {} {} {} {Size} {100} {20} {} {} {} {} {} {} {} "" {} {} {}
+#BUTTON 4 {设置pfm} {#prompt pfm {使用绝招(例如perform sword.zhuan)}} {} {} {} {} {} {Size} {100} {20} {} {} {} {} {} {} {} "" {} {} {}
+#BUTTON 5 {请自备干粮水袋} {} {} {} {} {} {} {Size} {120} {23} {} {} {} {} {} {} {} "" {} {} {}
+#DIR ew

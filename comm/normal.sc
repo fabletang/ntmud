@@ -86,5 +86,9 @@
 /al qq {quest}
 /al eatall {drink hulu;de4 {eat mantou}}
 /ac {^== 未完继续}{/cr}
+/al new {chat %0}
+/al new* {chat* %0}
 /al hfall {fyz;rideto wumiao;ask nan xian about 恢复}
 /ac {^你现在真气（要求15的内力）不够，难以施展「连环决」。}{/unticker k;s;hfall;de1 {rd haigui};de3 {/ticker {k}{drop coin;k}{2}}}
+/ac {^但是你今天太累了，学习了}{sleep}
+/ac {^然而你今天太累了，无法再进行任何学习了。}{sleep}
