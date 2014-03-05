@@ -8,8 +8,8 @@
 /format logname {../%s.log}{$myname}
 /log a {$logname}
 /format chatlog {ct-%s.log}{$myname}
-/ac {^ã€é—²èŠã€‘}{/line log $chatlog}{plain}
-/ac {^ã€è°£è¨€ã€‘}{/line log $chatlog}{plain}
+/ac {^¡¾ÏĞÁÄ¡¿}{/line log $chatlog}{plain}
+/ac {^¡¾Ò¥ÑÔ¡¿}{/line log $chatlog}{plain}
 /al noidle {/ticker {noidle}{haha}{280}}
 /read comm/normal.sc
 /read comm/path.sc

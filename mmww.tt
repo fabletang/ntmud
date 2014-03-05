@@ -8,8 +8,8 @@
 /format logname {../%s.log}{$myname}
 /log a {$logname}
 /format chatlog {ct-%s.log}{$myname}
-/ac {^ã€é—²èŠã€‘}{/line log $chatlog}{plain}
-/ac {^ã€è°£è¨€ã€‘}{/line log $chatlog}{plain}
+/ac {^¡¾ÏÐÁÄ¡¿}{/line log $chatlog}{plain}
+/ac {^¡¾Ò¥ÑÔ¡¿}{/line log $chatlog}{plain}
 /al noidle {/ticker {noidle}{haha}{280}}
 /read comm/normal.sc
 /read comm/path.sc
@@ -19,7 +19,10 @@
 /read comm/fight.sc
 /al hsd {wield zhufu sword;hit shen diao;/ticker {k}{drop coin;drop silver;k}{2}}
 /al stopk {/unticker {k}}
-/ac {^ä½ çŽ°åœ¨çœŸæ°”ï¼ˆè¦æ±‚15çš„å†…åŠ›ï¼‰ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•ã€Œè¿žçŽ¯å†³ã€ã€‚}{/unticker k;
+/ac {^ÄãÏÖÔÚÕæÆø£¨ÒªÇó15µÄÄÚÁ¦£©²»¹»£¬ÄÑÒÔÊ©Õ¹¡¸Á¬»·¾ö¡¹¡£}{/unticker k;
 de2 {/system tt++ mmww.tt};
 de10 hfall;de13 {rd shendiao};de14 {hsd};
 }
+/ac {^¡¸Á¬»·¾ö¡¹Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£}{}
+/al lhamagong {/ticker {lian}{w;ask nan about »Ö¸´;de2 {e;lian force 200;w}}{3}}
+/al stopl {/unticker lian}
